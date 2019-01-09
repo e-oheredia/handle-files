@@ -9,11 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.exact.handle.files.services.ManageFileService;
 
-@Controller
+@RestController
 public class ManageFileController {
 
 	@Autowired
@@ -21,13 +22,13 @@ public class ManageFileController {
 
 	@RequestMapping(method = RequestMethod.POST, value = "/upload")
 	@ResponseBody
-	public ResponseEntity<Integer> upload(@RequestParam("file") MultipartFile file) {
+	public ResponseEntity<String> upload(@RequestParam("file") MultipartFile file, @RequestParam("ruta") String ruta) {
 		if (file == null) {
-			ResponseEntity<Integer> responseEntity = new ResponseEntity<Integer>(-2, HttpStatus.BAD_REQUEST);
+			ResponseEntity<String> responseEntity = new ResponseEntity<String>("-2", HttpStatus.BAD_REQUEST);
 			return responseEntity;
 		}
-		int respuesta = manageFileService.updateFile(file);		
-		ResponseEntity<Integer> responseEntity = new ResponseEntity<Integer>(respuesta,
+		int respuesta = manageFileService.updateFile(file,ruta);		
+		ResponseEntity<String> responseEntity = new ResponseEntity<String>(String.valueOf(respuesta),
 				HttpStatus.OK);		
 		return responseEntity;
 

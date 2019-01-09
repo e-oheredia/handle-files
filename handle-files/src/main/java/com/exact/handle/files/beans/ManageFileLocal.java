@@ -22,11 +22,11 @@ public class ManageFileLocal implements IManageFile {
 	private String urlLocal;
 
 	@Override
-	public int upload(MultipartFile file) {
+	public int upload(MultipartFile file, String ruta) {
 
 		try {
 			String filename = file.getOriginalFilename();
-			String directory = urlLocal;
+			String directory = urlLocal+ruta;
 			String filepath = Paths.get(directory, filename).toString();
 
 			BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(new File(filepath)));

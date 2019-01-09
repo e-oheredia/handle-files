@@ -16,8 +16,8 @@ public class ManageFileService {
 	@Qualifier("ManageFileLocal")
 	private IManageFile manageFile;
 	
-	public int updateFile(MultipartFile file) {		
-		return manageFile.upload(file);
+	public int updateFile(MultipartFile file, String ruta) {		
+		return manageFile.upload(file,ruta);
 	}
 	
 	public int deleteFile(String fileName) {
