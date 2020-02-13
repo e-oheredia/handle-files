@@ -7,7 +7,7 @@
 	<groupId>com.exact</groupId>
 	<artifactId>handle-files</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>handle-files</name>
 	<description>Proyecto para gestionar archivos</description>
@@ -43,6 +43,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>net.bytebuddy</groupId>
+			<artifactId>byte-buddy</artifactId>
+			<version>1.9.3</version><!--$NO-MVN-MAN-VER$-->
 		</dependency>
 	</dependencies>
 
