@@ -7,7 +7,7 @@
 	<groupId>com.exact</groupId>
 	<artifactId>handle-files</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>handle-files</name>
 	<description>Proyecto para gestionar archivos</description>
@@ -52,6 +52,11 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.19.1</version>
+        </plugin>
 		</plugins>
 	</build>
 
